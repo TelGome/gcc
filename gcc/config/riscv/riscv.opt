@@ -536,6 +536,11 @@ Mask(XSFVQMACCDOD) Var(riscv_sifive_subext)
 Mask(XSFVFNRCLIPXFQF) Var(riscv_sifive_subext)
 
 TargetVariable
+int riscv_qc_subext
+
+Mask(XQCCMP) Var(riscv_qc_subext)
+
+TargetVariable
 int riscv_fmv_priority = 0
 
 Enum
