@@ -540,6 +540,40 @@ int riscv_qc_subext
 
 Mask(XQCCMP) Var(riscv_qc_subext)
 
+Mask(XQCIA) Var(riscv_qc_subext)
+
+Mask(XQCIAC) Var(riscv_qc_subext)
+
+Mask(XQCIBI) Var(riscv_qc_subext)
+
+Mask(XQCIBM) Var(riscv_qc_subext)
+
+Mask(XQCICLI) Var(riscv_qc_subext)
+
+Mask(XQCICM) Var(riscv_qc_subext)
+
+Mask(XQCICS) Var(riscv_qc_subext)
+
+Mask(XQCICSR) Var(riscv_qc_subext)
+
+Mask(XQCIINT) Var(riscv_qc_subext)
+
+Mask(XQCILB) Var(riscv_qc_subext)
+
+Mask(XQCILI) Var(riscv_qc_subext)
+
+Mask(XQCILIA) Var(riscv_qc_subext)
+
+Mask(XQCILO) Var(riscv_qc_subext)
+
+Mask(XQCILSM) Var(riscv_qc_subext)
+
+Mask(XQCISIM) Var(riscv_qc_subext)
+
+Mask(XQCISLS) Var(riscv_qc_subext)
+
+Mask(XQCISYNC) Var(riscv_qc_subext)
+
 TargetVariable
 int riscv_fmv_priority = 0
 

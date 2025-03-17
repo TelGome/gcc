@@ -230,6 +230,16 @@ static const riscv_implied_info_t riscv_implied_info[] =
   {"xsfvcp", "zve32x"},
 
   {"xqccmp", "zca"},
+  {"xqciac", "zca"},
+  {"xqcibi", "zca"},
+  {"xqcibm", "zca"},
+  {"xqcicm", "zca"},
+  {"xqciint", "zca"},
+  {"xqcilb", "zca"},
+  {"xqcilia", "zca"},
+  {"xqcilo", "zca"},
+  {"xqcisim", "zca"},
+  {"xqcisync", "zca"},
 
   {NULL, NULL}
 };
@@ -445,6 +455,23 @@ static const struct riscv_ext_version riscv_ext_version_table[] =
   {"xsfvfnrclipxfqf", ISA_SPEC_CLASS_NONE, 1, 0},
 
   {"xqccmp", ISA_SPEC_CLASS_NONE, 0, 1},
+  {"xqcia", ISA_SPEC_CLASS_NONE, 0, 4},
+  {"xqciac", ISA_SPEC_CLASS_NONE, 0, 2},
+  {"xqcibi", ISA_SPEC_CLASS_NONE, 0, 2},
+  {"xqcibm", ISA_SPEC_CLASS_NONE, 0, 4},
+  {"xqcicli", ISA_SPEC_CLASS_NONE, 0, 2},
+  {"xqcicm", ISA_SPEC_CLASS_NONE, 0, 2},
+  {"xqcics", ISA_SPEC_CLASS_NONE, 0, 2},
+  {"xqcicsr", ISA_SPEC_CLASS_NONE, 0, 3},
+  {"xqciint", ISA_SPEC_CLASS_NONE, 0, 2},
+  {"xqcilb", ISA_SPEC_CLASS_NONE, 0, 2},
+  {"xqcili", ISA_SPEC_CLASS_NONE, 0, 2},
+  {"xqcilia", ISA_SPEC_CLASS_NONE, 0, 2},
+  {"xqcilo", ISA_SPEC_CLASS_NONE, 0, 2},
+  {"xqcilsm", ISA_SPEC_CLASS_NONE, 0, 4},
+  {"xqcisim", ISA_SPEC_CLASS_NONE, 0, 2},
+  {"xqcisls", ISA_SPEC_CLASS_NONE, 0, 2},
+  {"xqcisync", ISA_SPEC_CLASS_NONE, 0, 2},
 
   /* Terminate the list.  */
   {NULL, ISA_SPEC_CLASS_NONE, 0, 0}
@@ -1313,6 +1340,70 @@ riscv_subset_list::check_conflict_ext ()
     error_at (m_loc, "%<-march=%s%>: zcf extension supports in rv32 only",
 	      m_arch);
 
+  if (lookup ("xqcia") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcia extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqciac") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqciac extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqcibi") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcibi extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqcicli") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcicli extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqcicm") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcicm extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqcics") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcics extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqcicsr") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcicsr extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqciint") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqciint extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqcilb") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcilb extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqcili") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcili extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqcilia") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcilia extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqcilo") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcilo extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqcilsm") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcilsm extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqcisim") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcisim extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqcisls") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcisls extension supports in rv32 only",
+	      m_arch);
+
+  if (lookup ("xqcisync") && m_xlen == 64)
+    error_at (m_loc, "%<-march=%s%>: xqcisync extension supports in rv32 only",
+	      m_arch);
+
   if (lookup ("zfinx") && lookup ("f"))
     error_at (m_loc,
 	      "%<-march=%s%>: z*inx conflicts with floating-point "
@@ -1783,6 +1874,23 @@ static const riscv_ext_flag_table_t riscv_ext_flag_table[] =
   RISCV_EXT_FLAG_ENTRY ("xsfvfnrclipxfqf", x_riscv_sifive_subext, MASK_XSFVFNRCLIPXFQF),
 
   RISCV_EXT_FLAG_ENTRY ("xqccmp", x_riscv_qc_subext, MASK_XQCCMP),
+  RISCV_EXT_FLAG_ENTRY ("xqcia", x_riscv_qc_subext, MASK_XQCIA),
+  RISCV_EXT_FLAG_ENTRY ("xqciac", x_riscv_qc_subext, MASK_XQCIAC),
+  RISCV_EXT_FLAG_ENTRY ("xqcibi", x_riscv_qc_subext, MASK_XQCIBI),
+  RISCV_EXT_FLAG_ENTRY ("xqcibm", x_riscv_qc_subext, MASK_XQCIBM),
+  RISCV_EXT_FLAG_ENTRY ("xqcicli", x_riscv_qc_subext, MASK_XQCICLI),
+  RISCV_EXT_FLAG_ENTRY ("xqcicm", x_riscv_qc_subext, MASK_XQCICM),
+  RISCV_EXT_FLAG_ENTRY ("xqcics", x_riscv_qc_subext, MASK_XQCICS),
+  RISCV_EXT_FLAG_ENTRY ("xqcicsr", x_riscv_qc_subext, MASK_XQCICSR),
+  RISCV_EXT_FLAG_ENTRY ("xqciint", x_riscv_qc_subext, MASK_XQCIINT),
+  RISCV_EXT_FLAG_ENTRY ("xqcilb", x_riscv_qc_subext, MASK_XQCILB),
+  RISCV_EXT_FLAG_ENTRY ("xqcili", x_riscv_qc_subext, MASK_XQCILI),
+  RISCV_EXT_FLAG_ENTRY ("xqcilia", x_riscv_qc_subext, MASK_XQCILIA),
+  RISCV_EXT_FLAG_ENTRY ("xqcilo", x_riscv_qc_subext, MASK_XQCILO),
+  RISCV_EXT_FLAG_ENTRY ("xqcilsm", x_riscv_qc_subext, MASK_XQCILSM),
+  RISCV_EXT_FLAG_ENTRY ("xqcisim", x_riscv_qc_subext, MASK_XQCISIM),
+  RISCV_EXT_FLAG_ENTRY ("xqcisls", x_riscv_qc_subext, MASK_XQCISLS),
+  RISCV_EXT_FLAG_ENTRY ("xqcisync", x_riscv_qc_subext, MASK_XQCISYNC),
 
   {NULL, NULL, NULL, 0}
 };
