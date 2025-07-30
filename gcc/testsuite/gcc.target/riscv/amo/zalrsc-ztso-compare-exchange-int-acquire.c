@@ -2,6 +2,7 @@
 /* Verify that compare exchange mappings match the Ztso suggested mapping.  */
 /* { dg-add-options riscv_zalrsc } */
 /* { dg-add-options riscv_ztso } */
+/* { dg-remove-options riscv_zacas } */
 /* { dg-final { scan-assembler-times "lr.w\t" 1 } } */
 /* { dg-final { scan-assembler-times "sc.w\t" 1 } } */
 
