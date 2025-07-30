@@ -5144,7 +5144,7 @@ riscv_init_cumulative_args (CUMULATIVE_ARGS *cum, tree fntype, rtx, tree, int)
 static bool
 riscv_vector_type_p (const_tree type)
 {
-  /* Currently, only builtin scalabler vector type is allowed, in the future,
+  /* Currently, only builtin scalable vector type is allowed, in the future,
      more vector types may be allowed, such as GNU vector type, etc.  */
   return riscv_vector::builtin_type_p (type);
 }

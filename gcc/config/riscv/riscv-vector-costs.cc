@@ -748,7 +748,7 @@ update_local_live_ranges (
 		 convert it into:
 
 		   1. MASK_LEN_GATHER_LOAD (..., perm indice).
-		   2. Continguous load/store + VEC_PERM (..., perm indice)
+		   2. Contiguous load/store + VEC_PERM (..., perm indice)
 
 		We will be likely using one more vector variable.  */
 	      unsigned int max_point
@@ -883,7 +883,7 @@ costs::analyze_loop_vinfo (loop_vec_info loop_vinfo)
   record_potential_unexpected_spills (loop_vinfo);
 }
 
-/* Analyze the vectorized program stataments and use dynamic LMUL
+/* Analyze the vectorized program statements and use dynamic LMUL
    heuristic to detect whether the loop has unexpected spills.  */
 void
 costs::record_potential_unexpected_spills (loop_vec_info loop_vinfo)
@@ -1154,7 +1154,7 @@ costs::add_stmt_cost (int count, vect_cost_for_stmt kind,
     {
       /* If we're applying the VLA vs. VLS unrolling heuristic,
 	 estimate the number of statements in the unrolled VLS
-	 loop.  For simplicitly, we assume that one iteration of the
+	 loop.  For simplicity, we assume that one iteration of the
 	 VLS loop would need the same number of statements
 	 as one iteration of the VLA loop.  */
       if (where == vect_body && m_unrolled_vls_niters)
