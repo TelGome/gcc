@@ -402,6 +402,7 @@ static const struct riscv_ext_version riscv_ext_version_table[] =
   {"svinval", ISA_SPEC_CLASS_NONE, 1, 0},
   {"svnapot", ISA_SPEC_CLASS_NONE, 1, 0},
   {"svpbmt",  ISA_SPEC_CLASS_NONE, 1, 0},
+  {"svvptc",  ISA_SPEC_CLASS_NONE, 1, 0},
 
   {"xcvmac", ISA_SPEC_CLASS_NONE, 1, 0},
   {"xcvalu", ISA_SPEC_CLASS_NONE, 1, 0},
@@ -1714,6 +1715,7 @@ static const riscv_ext_flag_table_t riscv_ext_flag_table[] =
 
   RISCV_EXT_FLAG_ENTRY ("svinval", x_riscv_sv_subext, MASK_SVINVAL),
   RISCV_EXT_FLAG_ENTRY ("svnapot", x_riscv_sv_subext, MASK_SVNAPOT),
+  RISCV_EXT_FLAG_ENTRY ("svvptc", x_riscv_sv_subext, MASK_SVVPTC),
 
   RISCV_EXT_FLAG_ENTRY ("ztso", x_riscv_ztso_subext, MASK_ZTSO),
 
