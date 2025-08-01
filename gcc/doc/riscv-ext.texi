@@ -586,26 +586,6 @@
 @tab 1.0
 @tab xcvsimd extension
 
-@item xsfcease
-@tab 1.0
-@tab xsfcease extension
-
-@item xsfvcp
-@tab 1.0
-@tab xsfvcp extension
-
-@item xsfvfnrclipxfqf
-@tab 1.0
-@tab xsfvfnrclipxfqf extension
-
-@item xsfvqmaccdod
-@tab 1.0
-@tab xsfvqmaccdod extension
-
-@item xsfvqmaccqoq
-@tab 1.0
-@tab xsfvqmaccqoq extension
-
 @item xtheadba
 @tab 1.0
 @tab T-head address calculation extension
