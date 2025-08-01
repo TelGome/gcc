@@ -2003,23 +2003,6 @@ riscv_ext_is_subset (struct cl_target_option *opts,
   return true;
 }
 
-/* Return the mask of ISA extension in x_target_flags of gcc_options.  */
-
-int
-riscv_x_target_flags_isa_mask (void)
-{
-  int mask = 0;
-  const riscv_ext_flag_table_t *arch_ext_flag_tab;
-  for (arch_ext_flag_tab = &riscv_ext_flag_table[0];
-       arch_ext_flag_tab->ext;
-       ++arch_ext_flag_tab)
-    {
-      if (arch_ext_flag_tab->var_ref == &gcc_options::x_target_flags)
-	mask |= arch_ext_flag_tab->mask;
-    }
-  return mask;
-}
-
 /* Parse a RISC-V ISA string into an option mask.  Must clear or set all arch
    dependent mask bits, in case more than one -march string is passed.  */
 
