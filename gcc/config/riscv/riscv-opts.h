@@ -158,4 +158,12 @@ enum riscv_tls_type {
   TLS_DESCRIPTORS
 };
 
+/* Extra extension flags, used for carry extra info for a RISC-V extension.  */
+enum
+{
+  EXT_FLAG_MACRO = 1 << 0,
+};
+
+#define BITMASK_NOT_YET_ALLOCATED -1
+
 #endif /* ! GCC_RISCV_OPTS_H */
