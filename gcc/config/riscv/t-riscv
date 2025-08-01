@@ -165,7 +165,6 @@ RISCV_EXT_DEFS = \
   $(srcdir)/config/riscv/riscv-ext.def \
   $(srcdir)/config/riscv/riscv-ext-corev.def \
   $(srcdir)/config/riscv/riscv-ext.def \
-  $(srcdir)/config/riscv/riscv-ext-sifive.def \
   $(srcdir)/config/riscv/riscv-ext-thead.def \
   $(srcdir)/config/riscv/riscv-ext-ventana.def
 

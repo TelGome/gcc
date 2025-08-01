@@ -1819,6 +1819,5 @@ DEFINE_RISCV_EXT(
   /* EXTRA_EXTENSION_FLAGS */ 0)
 
 #include "riscv-ext-corev.def"
-#include "riscv-ext-sifive.def"
 #include "riscv-ext-thead.def"
 #include "riscv-ext-ventana.def"
